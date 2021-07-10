@@ -204,11 +204,11 @@ void SiloWrappers_DBGetToc(
     fprintf(Handle, "%s", SiloToc->dir_names[iCount]);
   fprintf(Handle, "\n");
   
-  fprintf(Handle, "narrays=%d\n", SiloToc->narrays);
+  fprintf(Handle, "narrays=%d\n", SiloToc->narray);
   fprintf(Handle, "array_names=");
-  for(iCount=0; iCount < SiloToc->narrays-1; iCount++)
+  for(iCount=0; iCount < SiloToc->narray-1; iCount++)
     fprintf(Handle, "%s,", SiloToc->array_names[iCount]);
-  if(SiloToc->narrays > iCount)
+  if(SiloToc->narray > iCount)
     fprintf(Handle, "%s", SiloToc->array_names[iCount]);
   fprintf(Handle, "\n");
   

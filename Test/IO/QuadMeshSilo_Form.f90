@@ -7,7 +7,7 @@ module QuadMeshSilo_Form
   implicit none
   private
   
-  include 'silo.inc'
+  include 'silo_f9x.inc'
   
   public :: &
     Create, &
