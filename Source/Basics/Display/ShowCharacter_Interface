@@ -1,0 +1,14 @@
+interface 
+  subroutine ShowCharacter( &
+               String, Description, IgnorabilityOption, &
+               ProcessRankOption, nLeadingBlankLinesOption)
+    use VariableManagement
+    character(*), intent(in) :: &
+      String, &
+      Description
+    integer(KI), intent(in), optional :: &
+      IgnorabilityOption, &
+      ProcessRankOption, &
+      nLeadingBlankLinesOption
+  end subroutine ShowCharacter
+end interface

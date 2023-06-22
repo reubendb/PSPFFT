@@ -1,0 +1,25 @@
+TAG_OFFSET_Singleton.o: \
+  VariableManagement.o \
+  TAG_OFFSET_Singleton.f90
+
+Send_Command.o: \
+  VariableManagement.o \
+  Display.o \
+  MessagePassingBasics.o \
+  Send_Command.f90
+
+Receive_Command.o: \
+  VariableManagement.o \
+  Display.o \
+  MessagePassingBasics.o \
+  Receive_Command.f90
+
+Wait_Command.o: \
+  VariableManagement.o \
+  Wait_Command.f90
+
+PointToPoint.o: \
+  TAG_OFFSET_Singleton.o \
+  Send_Command.o \
+  Receive_Command.o \
+  Wait_Command.o \

@@ -1,0 +1,6 @@
+VARIABLE_GROUP = \
+  VariableGroup_Base.o \
+  PackedVariableGroup_Base.o \
+  VariableGroupArrayMetadata_Form.o \
+  VariableArrayGroup_Base.o \
+  VariableGroup.o

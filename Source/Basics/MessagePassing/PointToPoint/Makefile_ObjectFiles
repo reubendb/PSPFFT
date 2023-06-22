@@ -1,0 +1,6 @@
+POINT_TO_POINT = \
+  TAG_OFFSET_Singleton.o \
+  Send_Command.o \
+  Receive_Command.o \
+  Wait_Command.o \
+  PointToPoint.o

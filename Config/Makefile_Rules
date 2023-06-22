@@ -1,0 +1,4 @@
+%.o : %.c
+	$(C_COMPILE) $(CFLAGS) $(INCLUDE) $<
+%.o : %.f90
+	$(FORTRAN_COMPILE) $(FFLAGS) $(INCLUDE) $<

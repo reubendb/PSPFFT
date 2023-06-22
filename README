@@ -1,0 +1,91 @@
+This is a README for the PSPFFT library.
+
+I. REQUIREMENTS
+---------------
+PSPFFT requires the FFTW library (http://www.fftw.org/) and a working MPI
+installation. 
+
+The Test programs use the Silo library (https://wci.llnl.gov/codes/silo/) to 
+read/write datasets. 
+
+Optionally, the visualization software VisIt (http://www.llnl.gov/visit) is
+recommended to visualize the test data included with this distribution (see
+"VISUALIZING TEST DATA" below).
+
+
+II. INSTALL
+------------
+These are the steps to build and install the library:
+
+1. Go to the Config/ directory and edit the file Makefile_Config to set the 
+appropriate configuration for your system. The file is commented and an 
+example configuration already exists there. Set the makefile variables defined 
+there to the correct values for your system.
+
+2. Go to the Build/ directory and type "make" to compile the library.
+
+3. Type "make install" to install the library to the location you set in
+step 1. Make sure you have write access to the install directory (you may
+need to switch to a previleged user to do this, e.g. "sudo make install")
+
+4. (Optional) The library and  object files can be removed from the Build/ directory by
+typing "make clean". DO NOT run "make clean" if you plan to run the test
+programs included with this distribution (see section "III. TEST PROGRAM"
+below).
+
+By default the library is compiled without any debugging symbols. To enable
+debugging symbols, you can compile with "make PURPOSE=DEBUG" in step 2.
+
+III. TEST PROGRAM
+------------------
+A test program is included with this distribution. Test data are also
+included. The data files contain the mesh, the source distribution (mass 
+density) and the analytical solution of the potential. The program then reads 
+the data and solves the potential numerically using PSPFFT. The program writes 
+new files that contain the numerical solution, and computes the relative error 
+(specifically, the L1 norm) between the analytical and numerical solutions. 
+
+There is no need to install the library (i.e run "make install") to just run
+the test program. Only steps 1 and 2 from INSTALL are needed to run the
+test program.
+
+To build and run the test program:
+
+1. Go to Tests/ directory and type "make".
+
+2. Run the test program in parallel using the MPI agent in your system. 
+For example, on many systems you can use the command
+	mpirun -np <numproc> HomogeneousSpheroid_3D
+The test program can be run with <numproc> = 1 or 8 or 27 processes. 
+Test data are included (in Tests/Data/) and the appropriate set would be 
+picked depending on the number of MPI processes the program is run with.
+
+The expected L1_Norm Error output from the test program run with 1, 8, and
+27 processes (48^3, 96^3, and 144^3 total cells respectively) are:
+----------------------------------------------------------
+|  1 processor     |    L1_Norm Error  =  1.491234E-003  |
+|  8 processors    |    L1_Norm Error  =  2.899595E-003  |
+|  27 processors   |    L1_Norm Error  =  6.901286E-004  |
+----------------------------------------------------------
+Slight differences may exist for test done on different hardwares /
+compilers but they should be within numerical precision. 
+
+3. The potential as a solution to the problem is written to new files in 
+Test/Data/Data_<n>proc/ (see VISUALIZING TEST DATA below).
+
+4. The test program binaries and object files can be removed by typing "make
+clean" inside the Tests/ directory.
+
+IV. VISUALIZING TEST DATA
+-------------------------
+The test data can be read and visualized using VisIt
+(http://www.llnl.gov/visit). To do this, open the file
+Test/Data/Data_<n>proc/<program_name>_MultiMesh_0000000.silo. This contains
+the mesh, source distribution, and analytic solution of the potential. The
+numerical solution of the potential is set to zero in this file.
+
+After running the test programs, there will be a new file 
+Test/Data/Data_<n>proc/<program_name>_MultiMesh_0000001.silo which also 
+contains the mesh, source distribution, and analytic solution of the 
+potential, and in addition the numerical solution of the potential as computed 
+by PSPFFT.

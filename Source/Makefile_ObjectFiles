@@ -1,0 +1,13 @@
+PATH_BASICS  = $(PATH_SOURCES)/Basics
+PATH_SOLVERS = $(PATH_SOURCES)/Solvers
+
+include $(PATH_BASICS)/Makefile_ObjectFiles
+include $(PATH_SOLVERS)/Makefile_ObjectFiles
+
+VPATH_SOURCES = \
+  $(VPATH_BASICS):\
+  $(VPATH_SOLVERS)
+
+SOURCES = \
+  $(BASICS) \
+  $(SOLVERS) \

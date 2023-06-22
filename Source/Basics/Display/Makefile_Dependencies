@@ -1,0 +1,16 @@
+CONSOLE_Singleton.o: \
+  VariableManagement.o \
+  ShowInteger_Interface \
+  ShowCharacter_Interface \
+  ShowMessage_Interface \
+  CONSOLE_Singleton.f90
+
+Show_Command.o: \
+  VariableManagement.o \
+  CONSOLE_Singleton.o \
+  Show_Command.f90
+
+Display.o: \
+  CONSOLE_Singleton.o \
+  Show_Command.o \
+  Display.f90

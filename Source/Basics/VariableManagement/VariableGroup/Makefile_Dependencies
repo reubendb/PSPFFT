@@ -1,0 +1,26 @@
+VariableGroup_Base.o: \
+  Specifiers.o \
+  Arrays.o \
+  VariableGroup_Base.f90
+
+PackedVariableGroup_Base.o: \
+  Specifiers.o \
+  VariableGroup_Base.o \
+  PackedVariableGroup_Base.f90
+
+VariableGroupArrayMetadata_Form.o: \
+  Specifiers.o \
+  VariableGroup_Base.o \
+  VariableGroupArrayMetadata_Form.f90
+
+VariableArrayGroup_Base.o: \
+  Specifiers.o \
+  Arrays.o \
+  VariableArrayGroup_Base.f90
+
+VariableGroup.o: \
+  VariableGroup_Base.o \
+  PackedVariableGroup_Base.o \
+  VariableGroupArrayMetadata_Form.o \
+  VariableArrayGroup_Base.o \
+  VariableGroup.f90

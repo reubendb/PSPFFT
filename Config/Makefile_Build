@@ -1,0 +1,12 @@
+PATH_CONFIG  = ../Config
+PATH_SOURCES = ../Source
+
+include $(PATH_CONFIG)/Makefile_Config
+include $(PATH_CONFIG)/Makefile_Rules
+
+include $(PATH_SOURCES)/Makefile_ObjectFiles
+VPATH = $(VPATH_SOURCES):../
+OBJECTS = $(SOURCES)
+
+INCLUDE = $(INCLUDE_FFTW) $(INCLUDE_SILO)
+LIBRARIES = $(LIBRARY_FFTW) $(LIBRARY_SILO)

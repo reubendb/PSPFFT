@@ -1,0 +1,34 @@
+Clear_Command.o: \
+  Specifiers.o \
+  Clear_Command.f90
+
+Set_Command.o: \
+  Specifiers.o \
+  Set_Command.f90
+
+Copy_Command.o: \
+  Specifiers.o \
+  Copy_Command.f90
+
+Sort_Command.o: \
+  Specifiers.o \
+  Sort_Command.f90
+
+Search_Command.o: \
+  Specifiers.o \
+  Search_Command.f90
+
+Array_Base.o: \
+  Specifiers.o \
+  Clear_Command.o \
+  Copy_Command.o \
+  Array_Base.f90
+
+Arrays.o: \
+  Clear_Command.o \
+  Set_Command.o \
+  Copy_Command.o \
+  Sort_Command.o \
+  Search_Command.o \
+  Array_Base.o \
+  Arrays.f90

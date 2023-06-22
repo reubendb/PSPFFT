@@ -1,0 +1,36 @@
+REDUCTION_Singleton.o: \
+  VariableManagement.o \
+  REDUCTION_Singleton.f90
+
+Block_Command.o: \
+  VariableManagement.o \
+  MessagePassingBasics.o \
+  Block_Command.f90
+
+Reduce_Command.o: \
+  VariableManagement.o \
+  Display.o \
+  MessagePassingBasics.o \
+  Reduce_Command.f90
+
+Gather_Command.o: \
+  VariableManagement.o \
+  Display.o \
+  MessagePassingBasics.o \
+  Gather_Command.f90
+
+AllToAll_Command.o: \
+  VariableManagement.o \
+  Display.o \
+  MessagePassingBasics.o \
+  AllToAll_Command.f90
+
+Collective.o: \
+  REDUCTION_Singleton.o \
+  Block_Command.o \
+  Reduce_Command.o \
+  Gather_Command.o \
+  AllToAll_Command.o \
+  Collective.f90
+
+

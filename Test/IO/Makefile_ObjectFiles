@@ -1,0 +1,5 @@
+IO = \
+  SiloWrappers.o \
+  InputOutputStreamSilo_Form.o \
+  QuadMeshSilo_Form.o \
+  IO.o

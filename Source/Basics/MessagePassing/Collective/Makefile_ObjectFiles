@@ -1,0 +1,7 @@
+COLLECTIVE = \
+  REDUCTION_Singleton.o \
+  Block_Command.o \
+  Reduce_Command.o \
+  Gather_Command.o \
+  AllToAll_Command.o \
+  Collective.o

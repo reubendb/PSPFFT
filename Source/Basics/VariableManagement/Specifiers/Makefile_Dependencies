@@ -1,0 +1,22 @@
+KIND_Singleton.o: \
+  KIND_Singleton.f90
+
+LEN_Singleton.o: \
+  KIND_Singleton.o \
+  LEN_Singleton.f90
+
+Void_Base.o: \
+  KIND_Singleton.o \
+  Void_Base.f90
+
+LabeledValue_Base.o: \
+  KIND_Singleton.o \
+  LEN_Singleton.o \
+  LabeledValue_Base.f90
+
+Specifiers.o: \
+  KIND_Singleton.o \
+  LEN_Singleton.o \
+  Void_Base.o \
+  LabeledValue_Base.o \
+  Specifiers.f90

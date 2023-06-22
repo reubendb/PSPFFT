@@ -1,0 +1,4 @@
+DISPLAY = \
+  CONSOLE_Singleton.o \
+  Show_Command.o \
+  Display.o \

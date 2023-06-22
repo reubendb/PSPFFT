@@ -1,0 +1,13 @@
+interface 
+  subroutine ShowMessage( &
+               Message, IgnorabilityOption, ProcessRankOption, &
+               nLeadingBlankLinesOption)
+    use VariableManagement
+    character(*), intent(in) :: &
+      Message
+    integer(KI), intent(in), optional :: &
+      IgnorabilityOption, &
+      ProcessRankOption, &
+      nLeadingBlankLinesOption
+  end subroutine ShowMessage
+end interface

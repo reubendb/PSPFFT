@@ -1,0 +1,15 @@
+interface 
+  subroutine ShowInteger( &
+               Number, Description, IgnorabilityOption, &
+               ProcessRankOption, nLeadingBlankLinesOption)
+    use VariableManagement
+    integer(KI), intent(in) :: &
+      Number
+    character(*), intent(in) :: &
+      Description
+    integer(KI), intent(in), optional :: &
+      IgnorabilityOption, &
+      ProcessRankOption, &
+      nLeadingBlankLinesOption
+  end subroutine ShowInteger
+end interface

@@ -1,0 +1,19 @@
+PATH_VARIABLE_MANAGEMENT   = $(PATH_BASICS)/VariableManagement
+PATH_DISPLAY               = $(PATH_BASICS)/Display
+PATH_MESSAGE_PASSING       = $(PATH_BASICS)/MessagePassing
+
+include $(PATH_MESSAGE_PASSING)/Makefile_ObjectFiles
+include $(PATH_VARIABLE_MANAGEMENT)/Makefile_ObjectFiles
+include $(PATH_DISPLAY)/Makefile_ObjectFiles
+
+VPATH_BASICS = \
+  $(VPATH_VARIABLE_MANAGEMENT):\
+  $(PATH_DISPLAY):\
+  $(VPATH_MESSAGE_PASSING):\
+  $(PATH_BASICS)
+
+BASICS = \
+  $(VARIABLE_MANAGEMENT) \
+  $(DISPLAY) \
+  $(MESSAGE_PASSING) \
+  Basics.o

@@ -1,0 +1,7 @@
+SPECIFIERS = \
+  KIND_Singleton.o \
+  LEN_Singleton.o \
+  Void_Base.o \
+  LabeledValue_Base.o \
+  Specifiers.o
+

@@ -1,0 +1,25 @@
+# Sample
+
+#-- Specify compilers and appropriate flags
+C_COMPILE  = mpicc -c
+C_DEBUG    = -g -Wall
+C_OPTIMIZE = -O3
+
+FORTRAN_COMPILE  = mpif90 -c
+FORTRAN_DEBUG    = -g -gdwarf-2 -ffpe-trap=invalid,zero,overflow -Wall
+FORTRAN_OPTIMIZE = -O3
+
+#-- Specify linker to link the Fortran Test programs with. 
+LINK = mpif90
+
+#-- Specify location of FFTW library.
+INCLUDE_FFTW  = -I /usr/include
+LIBRARY_FFTW  = -L /usr/lib64 -lfftw3
+
+#-- Specify location of Silo library. This is only necessary to compile 
+#   & run Test programs. PSPFFT itself does not need this. 
+INCLUDE_SILO  = -I /usr/local/silo/4.7.2/gcc/include
+LIBRARY_SILO  = -L /usr/local/silo/4.7.2/gcc/lib -lsilo
+
+#-- Specify the directory to install PSPFFT
+INSTALL = /usr/local/pspfft/1.0/${PE}
