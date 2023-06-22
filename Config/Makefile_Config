@@ -13,13 +13,14 @@ FORTRAN_OPTIMIZE = -O3
 LINK = mpif90
 
 #-- Specify location of FFTW library.
-INCLUDE_FFTW  = -I /usr/include
-LIBRARY_FFTW  = -L /usr/lib64 -lfftw3
+INCLUDE_FFTW  = -I${OLCF_FFTW_ROOT}/include
+LIBRARY_FFTW  = -L${OLCF_FFTW_ROOT}/lib64 -lfftw3
 
 #-- Specify location of Silo library. This is only necessary to compile 
 #   & run Test programs. PSPFFT itself does not need this. 
-INCLUDE_SILO  = -I /usr/local/silo/4.7.2/gcc/include
-LIBRARY_SILO  = -L /usr/local/silo/4.7.2/gcc/lib -lsilo
+SILO_DIR    ?= /sw/peak/caascade/silo/4.10.2/gcc8.1.0
+INCLUDE_SILO = -I${SILO_DIR}/include
+LIBRARY_SILO = -L${SILO_DIR}/lib -lsilo
 
 #-- Specify the directory to install PSPFFT
 INSTALL = /usr/local/pspfft/1.0/${PE}
